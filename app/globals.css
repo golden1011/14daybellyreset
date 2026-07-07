@@ -1,0 +1,42 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0c0c0e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #ff7a3d;
+}
+
+a:hover {
+  color: #f0531c;
+}
+
+.heroscale > * {
+  transform-origin: top left;
+}
+
+@keyframes drawcheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes popseal {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  image-slot::part(frame) { background: rgba(244,240,232,0.05); }
+  image-slot::part(ring) { border-color: rgba(240,83,28,0.55); border-width: 2px; }
+  image-slot::part(empty) { color: rgba(244,240,232,0.72); font-family: 'Barlow Condensed', sans-serif; letter-spacing: 2px; text-transform: uppercase; font-size: 15px; }
+</style>
+</helmet>
+
+<div style="width: 1750px; height: 1400px; position: relative; background: transparent; overflow: hidden; font-family: 'Barlow', sans-serif;">
+
+  <!-- ground shadows -->
+  <div style="position: absolute; left: 90px; top: 1130px; width: 720px; height: 170px; background: radial-gradient(closest-side, rgba(0,0,0,0.5), rgba(0,0,0,0) 72%); filter: blur(26px); transform: scaleY(0.4);"></div>
+  <div style="position: absolute; left: 900px; top: 1140px; width: 820px; height: 150px; background: radial-gradient(closest-side, rgba(0,0,0,0.42), rgba(0,0,0,0) 72%); filter: blur(24px); transform: scaleY(0.4);"></div>
+
+  <!-- ============ FANNED SUPPORTING SHEETS (top-right, behind) ============ -->
+  <div style="position: absolute; left: 1010px; top: 110px; width: 700px; height: 720px;">
+    <!-- FIRST 24 HOURS -->
+    <div style="position: absolute; left: 190px; top: 0; width: 450px; height: 560px; transform: rotate(2.2deg); background: #F2EEE4; border-radius: 4px; box-shadow: 0 18px 40px rgba(0,0,0,0.34); overflow: hidden;">
+      <div style="background: #1a1815; padding: 15px 26px; display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2px; color: #F2EEE4; font-size: 21px;">FIRST 24 HOURS</span>
+        <div style="position: relative; width: 18px; height: 18px;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 3px; right: 3px; top: 50%; height: 1.5px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 3px; bottom: 3px; left: 50%; width: 1.5px; background: #F0531C; transform: translateX(-50%);"></div></div>
+      </div>
+    </div>
+    <!-- WAIST TRACKER -->
+    <div style="position: absolute; left: 150px; top: 70px; width: 460px; height: 560px; transform: rotate(0.9deg); background: #F2EEE4; border-radius: 4px; box-shadow: 0 18px 40px rgba(0,0,0,0.3); overflow: hidden;">
+      <div style="background: #1a1815; padding: 15px 26px; display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2px; color: #F2EEE4; font-size: 21px;">WAIST TRACKER &middot; DAY 1&middot;7&middot;14</span>
+        <div style="position: relative; width: 18px; height: 18px;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 3px; right: 3px; top: 50%; height: 1.5px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 3px; bottom: 3px; left: 50%; width: 1.5px; background: #F0531C; transform: translateX(-50%);"></div></div>
+      </div>
+    </div>
+    <!-- GROCERY LIST -->
+    <div style="position: absolute; left: 105px; top: 150px; width: 480px; height: 560px; transform: rotate(-0.7deg); background: #F2EEE4; border-radius: 4px; box-shadow: 0 18px 40px rgba(0,0,0,0.28); overflow: hidden;">
+      <div style="background: #1a1815; padding: 15px 26px; display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2px; color: #F2EEE4; font-size: 21px;">GROCERY LIST &middot; SHOP ONCE</span>
+        <div style="position: relative; width: 18px; height: 18px;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 3px; right: 3px; top: 50%; height: 1.5px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 3px; bottom: 3px; left: 50%; width: 1.5px; background: #F0531C; transform: translateX(-50%);"></div></div>
+      </div>
+      <div style="display: flex; gap: 40px; padding: 22px 30px;">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
+          <div style="height: 9px; width: 90%; background: rgba(26,24,21,0.12); border-radius: 3px;"></div>
+          <div style="height: 9px; width: 78%; background: rgba(26,24,21,0.12); border-radius: 3px;"></div>
+          <div style="height: 9px; width: 85%; background: rgba(26,24,21,0.12); border-radius: 3px;"></div>
+        </div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 15px;">
+          <div style="height: 9px; width: 80%; background: rgba(26,24,21,0.12); border-radius: 3px;"></div>
+          <div style="height: 9px; width: 88%; background: rgba(26,24,21,0.12); border-radius: 3px;"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 14-DAY RESET CALENDAR (front sheet, crosshair days) -->
+    <div style="position: absolute; left: 40px; top: 240px; width: 520px; height: 480px; transform: rotate(-2deg); background: #F2EEE4; border-radius: 4px; box-shadow: 0 24px 48px rgba(0,0,0,0.34); overflow: hidden;">
+      <div style="background: linear-gradient(90deg, #F0531C, #C1400F); padding: 16px 28px; display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; color: #FFF4EC; font-size: 17px;">14-DAY BELLY FAT BURNING CALENDAR</span>
+        <div style="position: relative; width: 19px; height: 19px;"><div style="position: absolute; inset: 0; border: 2px solid #FFF4EC; border-radius: 50%;"></div><div style="position: absolute; left: 3px; right: 3px; top: 50%; height: 1.5px; background: #FFF4EC; transform: translateY(-50%);"></div><div style="position: absolute; top: 3px; bottom: 3px; left: 50%; width: 1.5px; background: #FFF4EC; transform: translateX(-50%);"></div></div>
+      </div>
+      <div style="padding: 24px 28px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px;">
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2.5px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 22px; color: #F0531C; background: #F2EEE4; padding: 0 3px;">1</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2.5px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 22px; color: #F0531C; background: #F2EEE4; padding: 0 3px;">2</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2.5px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 22px; color: #F0531C; background: #F2EEE4; padding: 0 3px;">3</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 22px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">4</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 22px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">5</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 22px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">6</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 22px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">7</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 22px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">8</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 22px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">9</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 19px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">10</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 19px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">11</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 19px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">12</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 12%; border: 2px solid rgba(26,24,21,0.22); border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1.5px; background: rgba(26,24,21,0.16); transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 1.5px; background: rgba(26,24,21,0.16); transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 19px; color: rgba(26,24,21,0.5); background: #F2EEE4; padding: 0 3px;">13</span></div>
+        <div style="position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center;"><div style="position: absolute; inset: 6%; border-radius: 50%; background: rgba(240,83,28,0.16);"></div><div style="position: absolute; inset: 12%; border: 3px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 4%; right: 4%; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 4%; bottom: 4%; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><span style="position: relative; font-family: 'Anton', sans-serif; font-size: 19px; color: #C1400F; background: #F2EEE4; padding: 0 3px;">14</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DAILY ORDERS PAGE (far right, tall) ============ -->
+  <div style="position: absolute; left: 1350px; top: 520px; width: 380px; height: 820px; transform: rotate(1.2deg); background: #F4F0E6; border-radius: 5px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); overflow: hidden;">
+    <div style="background: linear-gradient(90deg, #F0531C, #C1400F); padding: 20px 30px; display: flex; align-items: center; justify-content: space-between;">
+      <div>
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 3px; color: rgba(255,244,236,0.75); font-weight: 600;">DAILY ORDERS</div>
+        <div style="font-family: 'Anton', sans-serif; font-size: 30px; color: #FFF4EC; line-height: 0.9;">DAY 03 / 14</div>
+      </div>
+      <div style="position: relative; width: 22px; height: 22px;"><div style="position: absolute; inset: 0; border: 2px solid #FFF4EC; border-radius: 50%;"></div><div style="position: absolute; left: 3px; right: 3px; top: 50%; height: 1.5px; background: #FFF4EC; transform: translateY(-50%);"></div><div style="position: absolute; top: 3px; bottom: 3px; left: 50%; width: 1.5px; background: #FFF4EC; transform: translateX(-50%);"></div></div>
+    </div>
+    <div style="padding: 6px 0;">
+      <div style="padding: 14px 30px 6px; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 2px; color: #C1400F; font-weight: 700;">MORNING</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 9px 30px; background: rgba(26,24,21,0.04);"><span style="font-family: 'Barlow', sans-serif; font-size: 16px; color: #2b2820;">15-min brisk walk</span><div style="position: relative; width: 24px; height: 24px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><div style="position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; background: #F0531C; border-radius: 50%; transform: translate(-50%,-50%);"></div></div></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 9px 30px;"><span style="font-family: 'Barlow', sans-serif; font-size: 16px; color: #2b2820;">Protein breakfast, 3 eggs</span><div style="position: relative; width: 24px; height: 24px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><div style="position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; background: #F0531C; border-radius: 50%; transform: translate(-50%,-50%);"></div></div></div>
+
+      <div style="padding: 14px 30px 6px; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 2px; color: #C1400F; font-weight: 700;">MEALS FROM YOUR 10</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 9px 30px; background: rgba(26,24,21,0.04);"><span style="font-family: 'Barlow', sans-serif; font-size: 16px; color: #2b2820;">Lunch: Chicken &amp; greens</span><div style="position: relative; width: 24px; height: 24px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid rgba(26,24,21,0.28); border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 2px; background: rgba(26,24,21,0.2); transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 2px; background: rgba(26,24,21,0.2); transform: translateX(-50%);"></div></div></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 9px 30px;"><span style="font-family: 'Barlow', sans-serif; font-size: 16px; color: #2b2820;">Dinner: Steak &amp; roast veg</span><div style="position: relative; width: 24px; height: 24px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid rgba(26,24,21,0.28); border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 2px; background: rgba(26,24,21,0.2); transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 2px; background: rgba(26,24,21,0.2); transform: translateX(-50%);"></div></div></div>
+
+      <div style="padding: 14px 30px 6px; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 2px; color: #C1400F; font-weight: 700;">MOVEMENT</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 9px 30px; background: rgba(26,24,21,0.04);"><span style="font-family: 'Barlow', sans-serif; font-size: 16px; color: #2b2820;">10-min core circuit</span><div style="position: relative; width: 24px; height: 24px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid rgba(26,24,21,0.28); border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 2px; background: rgba(26,24,21,0.2); transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 2px; background: rgba(26,24,21,0.2); transform: translateX(-50%);"></div></div></div>
+
+      <div style="padding: 14px 30px 6px; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 2px; color: #C1400F; font-weight: 700;">ONE HABIT + SCOREBOARD</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 9px 30px; background: rgba(26,24,21,0.04);"><span style="font-family: 'Barlow', sans-serif; font-size: 16px; color: #2b2820;">No alcohol today</span><div style="position: relative; width: 24px; height: 24px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid rgba(26,24,21,0.28); border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 2px; background: rgba(26,24,21,0.2); transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 2px; background: rgba(26,24,21,0.2); transform: translateX(-50%);"></div></div></div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 9px 30px;"><span style="font-family: 'Barlow', sans-serif; font-size: 16px; color: #2b2820;">Measure waist on Day 3</span><div style="position: relative; width: 24px; height: 24px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid rgba(26,24,21,0.28); border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 2px; background: rgba(26,24,21,0.2); transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 2px; background: rgba(26,24,21,0.2); transform: translateX(-50%);"></div></div></div>
+    </div>
+  </div>
+
+  <!-- ============ SECONDARY BOOK: MEALS & GROCERY ============ -->
+  <div style="position: absolute; left: 970px; top: 590px; width: 400px; height: 620px; perspective: 2200px;">
+    <div style="position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateY(15deg) rotateX(2deg) rotateZ(0.8deg); filter: drop-shadow(24px 34px 40px rgba(0,0,0,0.42));">
+      <div style="position: absolute; top: 5px; left: 0; width: 40px; height: calc(100% - 10px); transform: rotateY(-90deg); transform-origin: left center; background: repeating-linear-gradient(0deg, #efe9db 0px, #efe9db 1px, #d3ccb8 1px, #d3ccb8 3.2px);"></div>
+      <div style="position: absolute; inset: 0; border-radius: 5px 7px 7px 5px; transform: translateZ(20px); overflow: hidden; background: linear-gradient(158deg, #221f1b 0%, #141210 60%, #0a0908 100%); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05);">
+        <div style="position: absolute; right: 0; top: 0; bottom: 0; width: 30px; background: linear-gradient(270deg, rgba(0,0,0,0.4), transparent);"></div>
+        <div style="padding: 56px 40px 0; text-align: center;">
+          <div style="width: 56px; height: 56px; margin: 0 auto; position: relative;">
+            <div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div>
+            <div style="position: absolute; left: 6px; right: 6px; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div>
+            <div style="position: absolute; top: 6px; bottom: 6px; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div>
+            <div style="position: absolute; left: 50%; top: 50%; width: 9px; height: 9px; background: #F0531C; border-radius: 50%; transform: translate(-50%,-50%);"></div>
+          </div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 4px; color: rgba(244,240,232,0.5); font-weight: 600; margin-top: 24px;">THE 14-DAY BELLY RESET</div>
+          <div style="font-family: 'Anton', sans-serif; font-size: 50px; line-height: 0.9; color: #F4F0E8; margin-top: 16px;">MEALS &amp;</div>
+          <div style="font-family: 'Archivo Black', sans-serif; font-size: 40px; line-height: 0.95; color: #F0531C; margin-top: 4px; letter-spacing: -1px;">GROCERY</div>
+          <div style="width: 60px; height: 4px; background: #F0531C; margin: 22px auto;"></div>
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 16px; letter-spacing: 1px; color: rgba(244,240,232,0.7); line-height: 1.3;">10 done-for-you meals.<br>One grocery list. Zero decisions.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MAIN GUIDE (front, left) ============ -->
+  <div style="position: absolute; left: 110px; top: 240px; width: 580px; height: 780px; perspective: 2700px;">
+    <div style="position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transform: rotateY(-24deg) rotateX(3deg) rotateZ(-1.5deg);">
+      <!-- box-set case edge (right) -->
+      <div style="position: absolute; top: 4px; right: 0; width: 84px; height: calc(100% - 8px); transform: rotateY(90deg); transform-origin: right center; background: linear-gradient(90deg, #302c27 0%, #16130f 42%, #0a0908 100%); box-shadow: inset 0 0 22px rgba(0,0,0,0.55), inset 2px 0 0 rgba(255,255,255,0.07);">
+        <!-- glossy vertical highlight -->
+        <div style="position: absolute; left: 10%; top: 0; bottom: 0; width: 5px; background: linear-gradient(90deg, rgba(255,255,255,0.14), transparent);"></div>
+        <!-- orange spine accent -->
+        <div style="position: absolute; right: 8px; top: 0; bottom: 0; width: 7px; background: linear-gradient(180deg, #FF7A3D, #C1400F);"></div>
+      </div>
+      <!-- box-set case edge (bottom) -->
+      <div style="position: absolute; left: 4px; bottom: 0; width: calc(100% - 4px); height: 84px; transform: rotateX(90deg); transform-origin: bottom center; background: linear-gradient(0deg, #302c27 0%, #16130f 42%, #0a0908 100%); box-shadow: inset 0 0 22px rgba(0,0,0,0.5);">
+        <div style="position: absolute; top: 10%; left: 0; right: 0; height: 5px; background: linear-gradient(0deg, rgba(255,255,255,0.12), transparent);"></div>
+      </div>
+
+      <!-- FRONT COVER -->
+      <div style="position: absolute; inset: 0; border-radius: 7px 5px 5px 7px; transform: translateZ(42px); overflow: hidden; background: #0a0908; box-shadow: 0 44px 74px rgba(0,0,0,0.58), inset 0 0 0 1px rgba(255,255,255,0.05);">
+
+        <!-- HERO PHOTO ZONE -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 57%; overflow: hidden;">
+          <image-slot id="belly-hero-man" shape="rect" fit="cover" placeholder="DROP MALE PHYSIQUE / TRANSFORMATION PHOTO" style="width: 100%; height: 100%; display: block; filter: grayscale(0.4) contrast(1.08);"></image-slot>
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,9,8,0.6) 0%, rgba(10,9,8,0) 28%, rgba(10,9,8,0) 52%, rgba(10,9,8,0.92) 86%, #0a0908 100%); pointer-events: none;"></div>
+          <!-- full-width measuring-tape divider (subtle) -->
+          <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 15px; background: linear-gradient(180deg, #FF7A3D 0%, #F0531C 62%, #C1400F 100%); overflow: hidden; pointer-events: none;">
+            <div style="position: absolute; left: 0; right: 0; top: 0; height: 6px; background-image: repeating-linear-gradient(90deg, rgba(255,244,236,0.75) 0, rgba(255,244,236,0.75) 1px, transparent 1px, transparent 15px);"></div>
+            <div style="position: absolute; left: 0; right: 0; top: 0; height: 10px; background-image: repeating-linear-gradient(90deg, rgba(255,244,236,0.85) 0, rgba(255,244,236,0.85) 1.5px, transparent 1.5px, transparent 75px);"></div>
+          </div>
+        </div>
+
+        <div style="position: absolute; left: 0; top: 0; bottom: 0; width: 34px; background: linear-gradient(90deg, rgba(0,0,0,0.5), rgba(0,0,0,0) 100%); z-index: 5;"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(118deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0) 30%); z-index: 5; pointer-events: none;"></div>
+
+        <!-- kicker badge -->
+        <div style="position: absolute; top: 46px; left: 64px; z-index: 6; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700;">
+          <span style="background: linear-gradient(135deg, #F0531C, #C1400F); color: #FFF4EC; font-size: 20px; letter-spacing: 3px; padding: 8px 15px; border-radius: 4px; box-shadow: 0 6px 18px rgba(240,83,28,0.4);">FOR MEN 35+</span>
+          <span style="color: #FFB489; font-size: 18px; letter-spacing: 2.5px; padding-left: 2px; line-height: 1.3;">STRUGGLING WITH<br>VISCERAL FAT</span>
+        </div>
+
+        <!-- CROSSHAIR TARGET BADGE -->
+        <div style="position: absolute; top: 42px; right: 46px; width: 122px; height: 122px; z-index: 6;">
+          <div style="position: absolute; inset: 0; border-radius: 50%; border: 2.5px solid #F0531C; background: rgba(10,9,8,0.4); backdrop-filter: blur(2px);"></div>
+          <div style="position: absolute; left: 12px; right: 12px; top: 50%; height: 1.5px; background: rgba(240,83,28,0.6); transform: translateY(-50%);"></div>
+          <div style="position: absolute; top: 12px; bottom: 12px; left: 50%; width: 1.5px; background: rgba(240,83,28,0.6); transform: translateX(-50%);"></div>
+          <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <div style="font-family: 'Anton', sans-serif; font-size: 40px; color: #F4F0E8; line-height: 0.8;">&minus;1&Prime;</div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 2px; color: #FF7A3D; font-weight: 700; margin-top: 2px;">WAIST &middot; 14 DAYS</div>
+          </div>
+        </div>
+
+        <!-- TITLE + LOWER CONTENT -->
+        <div style="position: absolute; left: 64px; right: 54px; bottom: 44px; z-index: 6;">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 30px; letter-spacing: 3px; color: #F4F0E8; font-weight: 600;">THE 14&#8209;DAY</div>
+          <div style="font-family: 'Anton', sans-serif; font-size: 122px; line-height: 0.82; color: #F4F0E8; letter-spacing: 1px; margin-top: 2px;">BELLY</div>
+          <div style="font-family: 'Archivo Black', sans-serif; font-size: 92px; line-height: 0.9; color: #F0531C; letter-spacing: -2px; margin-top: 6px;">RESET</div>
+
+          <div style="width: 88px; height: 5px; background: #F0531C; margin: 24px 0 18px;"></div>
+
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 28px; letter-spacing: 0.3px; color: rgba(244,240,232,0.88); font-weight: 500; line-height: 1.15;">Lose your first inch of belly,<br>starting <span style="position: relative; display: inline-block; font-family: 'Permanent Marker', cursive; font-style: italic; font-size: 44px; color: #FF7A3D; line-height: 1; letter-spacing: 0.5px; transform: rotate(-3deg); vertical-align: -8px; margin-left: 6px; text-shadow: 0 0 8px rgba(240,83,28,0.75), 0 0 22px rgba(240,83,28,0.5), 0 0 40px rgba(240,83,28,0.35);">tonight<span style="position: absolute; left: -2px; right: -10px; bottom: -14px; height: 4px; background: #FF7A3D; border-radius: 2px; transform: rotate(-4deg); transform-origin: left center; box-shadow: 0 0 8px rgba(240,83,28,0.8);"></span></span>!</div>
+
+          <!-- icon chips -->
+          <div style="display: flex; gap: 22px; align-items: center; margin-top: 30px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="position: relative; width: 26px; height: 26px; border: 2px solid #F0531C; border-radius: 50%;"><div style="position: absolute; left: -2px; top: 11px; width: 30px; height: 2px; background: #F0531C; transform: rotate(-45deg);"></div></div>
+              <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 18px; letter-spacing: 1.5px; color: #FF7A3D; font-weight: 600;">NO GYM</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="position: relative; width: 26px; height: 26px; border: 2px solid #F0531C; border-radius: 50%;"><div style="position: absolute; left: -2px; top: 11px; width: 30px; height: 2px; background: #F0531C; transform: rotate(-45deg);"></div></div>
+              <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 18px; letter-spacing: 1.5px; color: #FF7A3D; font-weight: 600;">NO KETO</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div style="position: relative; width: 26px; height: 26px; border: 2px solid #F0531C; border-radius: 50%;"><div style="position: absolute; left: -2px; top: 11px; width: 30px; height: 2px; background: #F0531C; transform: rotate(-45deg);"></div></div>
+              <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 18px; letter-spacing: 1.5px; color: #FF7A3D; font-weight: 600;">NO GIVING UP BEER</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PHONE (front-center) ============ -->
+  <div style="position: absolute; left: 720px; top: 660px; width: 330px; height: 690px; transform: perspective(2200px) rotateY(-16deg) rotateX(2deg) rotateZ(1.5deg); transform-origin: center; filter: drop-shadow(-24px 44px 48px rgba(0,0,0,0.5));">
+    <div style="position: absolute; inset: 0; border-radius: 44px; background: linear-gradient(155deg, #2a2723, #0d0c0a); padding: 13px; box-shadow: inset 0 0 0 2px rgba(255,255,255,0.06), inset 0 2px 6px rgba(255,255,255,0.08);">
+      <div style="position: absolute; inset: 13px; border-radius: 33px; background: linear-gradient(170deg, #16140F 0%, #0a0908 100%); overflow: hidden;">
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 26px 6px;">
+          <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 17px; color: #F4F0E8; letter-spacing: 0.5px;">9:41</span>
+          <div style="display: flex; gap: 6px; align-items: center;">
+            <div style="width: 6px; height: 6px; border-radius: 50%; background: #F0531C;"></div>
+            <div style="width: 22px; height: 11px; border: 1.5px solid rgba(244,240,232,0.6); border-radius: 3px; position: relative;"><div style="position: absolute; inset: 1.5px; width: 65%; background: #F0531C; border-radius: 1px;"></div></div>
+          </div>
+        </div>
+        <div style="padding: 14px 26px 0;">
+          <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 3px; color: #FF7A3D; font-weight: 700;">THE 14&#8209;DAY BELLY RESET</div>
+        </div>
+        <div style="display: flex; justify-content: center; margin-top: 14px;">
+          <div style="position: relative; width: 176px; height: 176px;">
+            <svg width="176" height="176" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(244,240,232,0.12)" stroke-width="9"></circle>
+              <circle cx="60" cy="60" r="52" fill="none" stroke="#F0531C" stroke-width="9" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="256" transform="rotate(-90 60 60)"></circle>
+            </svg>
+            <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 3px; color: rgba(244,240,232,0.55); font-weight: 600;">DAY</div>
+              <div style="font-family: 'Anton', sans-serif; font-size: 52px; color: #F4F0E8; line-height: 0.9;">03</div>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 2px; color: rgba(244,240,232,0.55); font-weight: 500;">OF 14</div>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 20px 26px 0; display: flex; flex-direction: column; gap: 14px;">
+          <div style="display: flex; align-items: center; gap: 13px;">
+            <div style="position: relative; width: 24px; height: 24px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><div style="position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; background: #F0531C; border-radius: 50%; transform: translate(-50%,-50%);"></div></div>
+            <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 17px; color: rgba(244,240,232,0.5); text-decoration: line-through;">15-min morning walk</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 13px;">
+            <div style="position: relative; width: 24px; height: 24px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid rgba(244,240,232,0.28); border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 2px; background: rgba(244,240,232,0.2); transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 2px; background: rgba(244,240,232,0.2); transform: translateX(-50%);"></div></div>
+            <span style="font-family: 'Barlow Condensed', sans-serif; font-size: 17px; color: #F4F0E8;">Measure waist on Day 3</span>
+          </div>
+        </div>
+        <div style="position: absolute; left: 22px; right: 22px; bottom: 26px; background: linear-gradient(145deg, rgba(240,83,28,0.22), rgba(240,83,28,0.06)); border: 1px solid rgba(240,83,28,0.4); border-radius: 16px; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-size: 12px; letter-spacing: 2px; color: rgba(244,240,232,0.55); font-weight: 600;">WAIST vs. DAY 1</div>
+            <div style="font-family: 'Anton', sans-serif; font-size: 26px; color: #F4F0E8;">38.0 in</div>
+          </div>
+          <div style="font-family: 'Anton', sans-serif; font-size: 30px; color: #FF7A3D;">&minus;0.4"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1750,&quot;height&quot;:1400}}"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #0c0c0e; }
+  * { box-sizing: border-box; }
+  a { color: #FF7A3D; }
+  a:hover { color: #F0531C; }
+  @keyframes drawcheck { to { stroke-dashoffset: 0; } }
+  @keyframes popseal { 0% { transform: scale(0.6); opacity: 0; } 60% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; background: #0c0c0e; color: #F4F0E8; font-family: 'Barlow', sans-serif; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column;">
+
+  <!-- top bar -->
+  <div style="border-bottom: 1px solid rgba(240,83,28,0.22); padding: 14px 20px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #0a0a0b;">
+    <div style="position: relative; width: 22px; height: 22px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 1.5px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 1.5px; background: #F0531C; transform: translateX(-50%);"></div></div>
+    <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 3px; font-size: 15px; color: #F4F0E8;">THE 14&#8209;DAY BELLY RESET</span>
+  </div>
+
+  <!-- body -->
+  <div style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 48px 22px;">
+    <div style="max-width: 560px; width: 100%; text-align: center;">
+
+      <!-- seal / check -->
+      <div style="width: 96px; height: 96px; margin: 0 auto; position: relative; animation: popseal 0.5s ease-out both;">
+        <div style="position: absolute; inset: 0; border-radius: 50%; border: 3px solid #F0531C; box-shadow: 0 0 30px rgba(240,83,28,0.45);"></div>
+        <svg viewBox="0 0 96 96" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+          <path d="M28 50 L43 64 L69 33" fill="none" stroke="#F0531C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="80" stroke-dashoffset="80" style="animation: drawcheck 0.5s ease-out 0.35s forwards;"></path>
+        </svg>
+      </div>
+
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 3px; color: #FF7A3D; font-size: 15px; margin-top: 26px;">PAYMENT CONFIRMED</div>
+
+      <h1 style="font-family: 'Anton', sans-serif; font-weight: 400; font-size: 44px; line-height: 0.98; letter-spacing: 0.5px; margin: 12px 0 0; color: #F7F3EA;">YOU'RE IN.<br>THE RESET STARTS <span style="font-family: 'Permanent Marker', cursive; color: #FF7A3D; font-size: 40px; display: inline-block; transform: rotate(-3deg); text-shadow: 0 0 10px rgba(240,83,28,0.6), 0 0 26px rgba(240,83,28,0.4);">tonight</span>.</h1>
+
+      <p style="font-size: 19px; line-height: 1.55; color: rgba(244,240,232,0.82); margin: 22px auto 0; max-width: 480px; font-weight: 500;">Good call. You just did the one thing most men keep putting off until next Monday. Now let's get your kit in your hands.</p>
+
+      <!-- delivery card -->
+      <div style="background: #14120f; border: 1px solid rgba(240,83,28,0.3); border-radius: 16px; padding: 26px 24px; margin: 30px 0 0; text-align: left; box-shadow: 0 20px 50px rgba(0,0,0,0.4);">
+        <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2px; color: #FF7A3D; font-size: 14px; margin-bottom: 16px;">WHAT HAPPENS NEXT</div>
+
+        <div style="display: flex; gap: 15px; align-items: flex-start; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08);">
+          <div style="font-family: 'Anton', sans-serif; font-size: 26px; color: #F0531C; line-height: 1; flex: none;">01</div>
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; color: #F7F3EA;">CHECK YOUR INBOX</div>
+            <div style="font-size: 16px; line-height: 1.5; color: rgba(244,240,232,0.72); margin-top: 3px;">Your full kit is on its way to the email you used at checkout. Give it up to <strong style="color: #F4F0E8;">15 minutes</strong> to land.</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 15px; align-items: flex-start; padding: 16px 0;">
+          <div style="font-family: 'Anton', sans-serif; font-size: 26px; color: #F0531C; line-height: 1; flex: none;">02</div>
+          <div>
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; color: #F7F3EA;">DON'T SEE IT? CHECK SPAM</div>
+            <div style="font-size: 16px; line-height: 1.5; color: rgba(244,240,232,0.72); margin-top: 3px;">New emails sometimes hide in spam or promotions. Look there first, and drag it to your inbox so the daily reminders come through.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- support -->
+      <div style="margin: 26px 0 0; padding: 20px; border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; background: #100f10;">
+        <div style="font-size: 16.5px; line-height: 1.55; color: rgba(244,240,232,0.8);">Still nothing after 15 minutes? Don't sweat it, we'll sort it out fast. Email me directly at</div>
+        <a href="mailto:info@14daybellyreset.com" style="display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.5px; font-size: 21px; margin-top: 8px; color: #FF7A3D; text-decoration: none;">info@14daybellyreset.com</a>
+      </div>
+
+      <p style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 1px; color: rgba(244,240,232,0.5); margin: 28px 0 0;">Grab a tape measure. Measure your waist. That number is your day-one starting line.</p>
+
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="background: #0a0a0b; padding: 24px 22px 32px; text-align: center;">
+    <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 3px; font-size: 13px; color: rgba(244,240,232,0.6);">THE 14&#8209;DAY BELLY RESET</div>
+    <p style="font-size: 12.5px; color: rgba(244,240,232,0.35); margin: 12px auto 0; max-width: 500px; line-height: 1.5;">&copy; 2026 The 14-Day Belly Reset. This program is for educational purposes and is not medical advice. Talk to your doctor before starting any nutrition or exercise program.</p>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>
