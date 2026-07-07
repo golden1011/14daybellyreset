@@ -1,6 +1,6 @@
 const pixelId = process.env.META_PIXEL_ID || "1343158414610855";
 const graphVersion = process.env.META_GRAPH_VERSION || "v21.0";
-const allowedEvents = new Set(["PageView", "Purchase"]);
+const allowedEvents = new Set(["PageView", "AddToCart", "Purchase"]);
 
 function getClientIp(req) {
   const forwarded = req.headers["x-forwarded-for"];

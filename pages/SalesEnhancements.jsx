@@ -2,6 +2,43 @@
 
 import { useEffect } from "react";
 
+const stripeBuyUrl = "https://buy.stripe.com/6oU7sKctObNC1a67rN4Ni0e";
+
+function createEventId(eventName) {
+  const random = Math.random().toString(36).slice(2);
+  return `${eventName.toLowerCase()}-${Date.now()}-${random}`;
+}
+
+function getCookie(name) {
+  const value = document.cookie
+    .split("; ")
+    .find((row) => row.startsWith(`${name}=`));
+  return value ? decodeURIComponent(value.split("=").slice(1).join("=")) : undefined;
+}
+
+function trackAddToCart() {
+  const eventName = "AddToCart";
+  const eventId = createEventId(eventName);
+
+  window.fbq?.("track", eventName, {}, { eventID: eventId });
+
+  fetch("/api/meta-conversion", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      eventName,
+      eventId,
+      eventSourceUrl: window.location.href,
+      fbp: getCookie("_fbp"),
+      fbc: getCookie("_fbc"),
+      customData: {}
+    }),
+    keepalive: true
+  }).catch(() => {});
+}
+
 export default function SalesEnhancements() {
   useEffect(() => {
     const fitHero = () => {
@@ -66,6 +103,9 @@ export default function SalesEnhancements() {
       dragging = false;
     };
 
+    const ctaLinks = Array.from(document.querySelectorAll(`a[href="${stripeBuyUrl}"]`));
+    ctaLinks.forEach((link) => link.addEventListener("click", trackAddToCart));
+
     slider?.addEventListener("pointerdown", onPointerDown);
     slider?.addEventListener("pointermove", onPointerMove);
     slider?.addEventListener("pointerup", stopDragging);
@@ -75,6 +115,7 @@ export default function SalesEnhancements() {
       timers.forEach(clearTimeout);
       observer?.disconnect();
       window.removeEventListener("resize", fitHero);
+      ctaLinks.forEach((link) => link.removeEventListener("click", trackAddToCart));
       slider?.removeEventListener("pointerdown", onPointerDown);
       slider?.removeEventListener("pointermove", onPointerMove);
       slider?.removeEventListener("pointerup", stopDragging);
