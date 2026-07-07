@@ -3,3 +3,6 @@ node_modules
 out
 *.log
 .vercel
+
+facebook-ads/
+facebook-ads-png.zip
