@@ -1,4 +1,4 @@
-import { getThankYouPageHtml } from "@/lib/dcPage";
+import { getThankYouPageHtml } from "../../lib/dcPage.js";
 
 export const metadata = {
   title: "Payment Confirmed | The 14-Day Belly Reset"
@@ -7,3 +7,4 @@ export const metadata = {
 export default function ThankYouPage() {
   return <main dangerouslySetInnerHTML={{ __html: getThankYouPageHtml() }} />;
 }
+

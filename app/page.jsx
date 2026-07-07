@@ -1,5 +1,5 @@
 import SalesEnhancements from "./SalesEnhancements";
-import { getSalesPageHtml } from "@/lib/dcPage";
+import { getSalesPageHtml } from "../lib/dcPage.js";
 
 export default function SalesPage() {
   return (
@@ -9,3 +9,4 @@ export default function SalesPage() {
     </>
   );
 }
+
