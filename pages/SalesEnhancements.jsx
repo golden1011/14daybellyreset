@@ -22,7 +22,7 @@ function trackAddToCart() {
 
   window.fbq?.("track", eventName, {}, { eventID: eventId });
 
-  fetch("/api/meta-conversion", {
+  return fetch("/api/meta-conversion", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -103,8 +103,24 @@ export default function SalesEnhancements() {
       dragging = false;
     };
 
-    const ctaLinks = Array.from(document.querySelectorAll(`a[href="${stripeBuyUrl}"]`));
-    ctaLinks.forEach((link) => link.addEventListener("click", trackAddToCart));
+    let redirectingToStripe = false;
+    const onCtaClick = (event) => {
+      const link = event.target?.closest?.("a");
+      if (!link?.href?.startsWith(stripeBuyUrl)) return;
+
+      trackAddToCart();
+
+      const isModifiedClick = event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0;
+      if (event.defaultPrevented || isModifiedClick || redirectingToStripe) return;
+
+      redirectingToStripe = true;
+      event.preventDefault();
+      window.setTimeout(() => {
+        window.location.href = link.href;
+      }, 350);
+    };
+
+    document.addEventListener("click", onCtaClick, true);
 
     slider?.addEventListener("pointerdown", onPointerDown);
     slider?.addEventListener("pointermove", onPointerMove);
@@ -115,7 +131,7 @@ export default function SalesEnhancements() {
       timers.forEach(clearTimeout);
       observer?.disconnect();
       window.removeEventListener("resize", fitHero);
-      ctaLinks.forEach((link) => link.removeEventListener("click", trackAddToCart));
+      document.removeEventListener("click", onCtaClick, true);
       slider?.removeEventListener("pointerdown", onPointerDown);
       slider?.removeEventListener("pointermove", onPointerMove);
       slider?.removeEventListener("pointerup", stopDragging);
