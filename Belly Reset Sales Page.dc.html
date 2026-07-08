@@ -18,6 +18,8 @@
   a { color: #FF7A3D; }
   a:hover { color: #F0531C; }
   .heroscale > * { transform-origin: top left; }
+  @keyframes guaranteeGlow { 0%, 100% { transform: scale(1); box-shadow: 0 0 24px rgba(166,184,92,0.25); } 50% { transform: scale(1.04); box-shadow: 0 0 42px rgba(166,184,92,0.48); } }
+  @keyframes ctaBreath { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.08); } }
 </style>
 </helmet>
 
@@ -46,7 +48,7 @@
     </div>
 
     <!-- CTA -->
-    <a href="https://buy.stripe.com/6oU7sKctObNC1a67rN4Ni0e" style="display: block; max-width: 460px; margin: 26px auto 0; text-decoration: none; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 22px; padding: 20px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);">START MY 14&#8209;DAY RESET &nbsp;&middot;&nbsp; $27</a>
+    <a href="https://buy.stripe.com/6oU7sKctObNC1a67rN4Ni0e" style="display: block; max-width: 460px; margin: 26px auto 0; text-decoration: none; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 22px; padding: 20px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);">START MY 14&#8209;DAY RESET &nbsp;&middot;&nbsp; $7</a>
     <p style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 1px; color: rgba(244,240,232,0.55); margin: 14px 0 0;">One-time payment. No subscription. 60-day money-back guarantee.</p>
   </div>
 
@@ -279,7 +281,7 @@
         </div>
         <div style="background: rgba(166,184,92,0.07); border: 1px solid rgba(166,184,92,0.3); border-radius: 12px; padding: 16px;">
           <div style="font-weight: 700; letter-spacing: 1px; color: #A6B85C; font-size: 14px; margin-bottom: 10px;">THE RESET</div>
-          <div style="display: flex; flex-direction: column; gap: 9px; font-size: 14.5px; color: rgba(244,240,232,0.88);"><div>&#10003; One payment, $27</div><div>&#10003; No upsells, ever</div><div>&#10003; Built for men 35+</div><div>&#10003; Waist as scoreboard</div><div>&#10003; One page a day</div></div>
+          <div style="display: flex; flex-direction: column; gap: 9px; font-size: 14.5px; color: rgba(244,240,232,0.88);"><div>&#10003; One payment, $7</div><div>&#10003; No upsells, ever</div><div>&#10003; Built for men 35+</div><div>&#10003; Waist as scoreboard</div><div>&#10003; One page a day</div></div>
         </div>
       </div>
     </div>
@@ -303,7 +305,7 @@
       <div style="font-family: 'Barlow', sans-serif; font-size: 12px; color: rgba(244,240,232,0.35); margin-top: 20px;">Images shown for illustration. Results vary from person to person.</div>
       <div style="max-width: 620px; margin: 30px auto 0; background: #14120f; border: 1px solid rgba(166,184,92,0.28); border-radius: 14px; padding: 22px; text-align: left;">
         <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2px; color: #A6B85C; font-size: 13px; margin-bottom: 10px;">THE REASON MEN START TONIGHT</div>
-        <div style="font-size: 18px; line-height: 1.55; color: rgba(244,240,232,0.86);">"Twenty-seven bucks felt like a fair bet because it is not a subscription and it gives me the whole plan right away. Worst case, I finally know exactly what to do for two weeks."</div>
+        <div style="font-size: 18px; line-height: 1.55; color: rgba(244,240,232,0.86);">"Seven bucks felt like a fair bet because it is not a subscription and it gives me the whole plan right away. Worst case, I finally know exactly what to do for two weeks."</div>
         <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.2px; color: rgba(244,240,232,0.55); font-size: 13px; margin-top: 12px;">CHRIS, 46</div>
       </div>
     </div>
@@ -328,7 +330,7 @@
             <line x1="176" y1="18" x2="176" y2="148" stroke="rgba(255,255,255,0.08)"/>
             <text x="196" y="18" fill="#A6B85C" font-size="12" letter-spacing="1">OURS</text>
             <rect x="196" y="44" width="112" height="56" rx="8" fill="rgba(166,184,92,0.1)" stroke="rgba(166,184,92,0.4)"/>
-            <text x="252" y="82" fill="#F7F3EA" font-family="Anton" font-size="26" text-anchor="middle">$27</text>
+            <text x="252" y="82" fill="#F7F3EA" font-family="Anton" font-size="26" text-anchor="middle">$7</text>
             <text x="252" y="124" fill="#A6B85C" font-family="Barlow Condensed" font-size="12" text-anchor="middle" letter-spacing="1">ONCE. DONE.</text>
           </g>
         </svg>
@@ -348,33 +350,32 @@
         </div>
         <div style="text-align: center; margin-top: 18px;">
           <div style="font-family: 'Barlow Condensed', sans-serif; letter-spacing: 2px; font-size: 14px; color: rgba(244,240,232,0.6);">TODAY, JUST</div>
-          <div style="font-family: 'Anton', sans-serif; font-size: 66px; line-height: 0.9; color: #F0531C; margin-top: 2px;">$27</div>
+          <div style="font-family: 'Anton', sans-serif; font-size: 66px; line-height: 0.9; color: #F0531C; margin-top: 2px;">$7</div>
         </div>
       </div>
 
-      <a href="https://buy.stripe.com/6oU7sKctObNC1a67rN4Ni0e" style="display: block; margin: 22px 0 0; text-decoration: none; text-align: center; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 23px; padding: 21px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);">YES, START MY RESET FOR $27</a>
+      <a href="https://buy.stripe.com/6oU7sKctObNC1a67rN4Ni0e" style="display: block; margin: 22px 0 0; text-decoration: none; text-align: center; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 23px; padding: 21px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);">YES, START MY RESET FOR $7</a>
       <p style="font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 1px; color: rgba(244,240,232,0.55); margin: 14px 0 0; text-align: center;">Instant access. One-time payment. No subscription, no upsells at checkout.</p>
     </div>
   </div>
 
   <!-- ===== GUARANTEE ===== -->
-  <div style="background: #100f10; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 46px 22px;">
-    <div style="max-width: 560px; margin: 0 auto; text-align: center;">
-      <div style="position: relative; width: 58px; height: 58px; margin: 0 auto 16px;"><div style="position: absolute; inset: 0; border: 3px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 6px; right: 6px; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 6px; bottom: 6px; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><div style="position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; background: #F0531C; border-radius: 50%; transform: translate(-50%,-50%);"></div></div>
-      <h2 style="font-family: 'Anton', sans-serif; font-weight: 400; font-size: 28px; line-height: 1.05; margin: 0; color: #F7F3EA;">THE 14&#8209;DAY WAIST GUARANTEE</h2>
-      <p style="font-size: 18px; line-height: 1.6; color: rgba(244,240,232,0.8); margin: 16px 0 0;">Measure on day 1. Follow the plan. If the tape hasn't moved by day 14, email us and get every cent back. You keep the whole thing. That's how sure we are the number will drop.</p>
-      <!-- G10: your first inch -->
-      <div style="max-width: 340px; margin: 26px auto 0;">
-        <svg viewBox="0 0 320 150" style="width: 100%; height: auto; display: block;">
-          <circle cx="160" cy="82" r="58" fill="none" stroke="rgba(244,240,232,0.1)" stroke-width="12"/>
-          <circle cx="160" cy="82" r="58" fill="none" stroke="#F0531C" stroke-width="12" stroke-linecap="round" stroke-dasharray="270 365" transform="rotate(135 160 82)"/>
-          <line x1="122" y1="82" x2="198" y2="82" stroke="rgba(255,244,236,0.35)" stroke-width="1.5"/>
-          <line x1="160" y1="44" x2="160" y2="120" stroke="rgba(255,244,236,0.35)" stroke-width="1.5"/>
-          <text x="160" y="78" fill="#F7F3EA" font-family="Anton" font-size="38" text-anchor="middle">&#8722;1&Prime;</text>
-          <text x="160" y="100" fill="#FF7A3D" font-family="Barlow Condensed" font-size="12" font-weight="700" letter-spacing="2" text-anchor="middle">IN 14 DAYS</text>
-          <text x="160" y="140" fill="rgba(244,240,232,0.55)" font-family="Barlow" font-size="12" text-anchor="middle">The first win that proves the rest is coming.</text>
-        </svg>
+  <div style="background: radial-gradient(120% 90% at 50% 0%, rgba(166,184,92,0.14) 0%, #100f10 52%, #0c0c0e 100%); border-top: 1px solid rgba(166,184,92,0.22); border-bottom: 1px solid rgba(166,184,92,0.18); padding: 54px 22px;">
+    <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+      <div style="display: inline-flex; align-items: center; justify-content: center; width: 132px; height: 132px; border-radius: 50%; background: rgba(166,184,92,0.12); border: 3px solid #A6B85C; animation: guaranteeGlow 2.8s ease-in-out infinite; position: relative;">
+        <div style="position: absolute; inset: 13px; border: 1px solid rgba(166,184,92,0.42); border-radius: 50%;"></div>
+        <div style="font-family: 'Anton', sans-serif; font-size: 34px; color: #F7F3EA; line-height: 0.9;">100%</div>
+        <div style="position: absolute; bottom: 26px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; color: #A6B85C;">REFUND</div>
       </div>
+      <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 3px; color: #A6B85C; font-size: 15px; margin-top: 20px;">60-DAY MONEY-BACK GUARANTEE</div>
+      <h2 style="font-family: 'Anton', sans-serif; font-weight: 400; font-size: 34px; line-height: 1.02; margin: 10px 0 0; color: #F7F3EA;">TRY THE RESET. MEASURE THE WAIST. KEEP THE RISK ON US.</h2>
+      <p style="font-size: 18px; line-height: 1.58; color: rgba(244,240,232,0.82); margin: 18px auto 0; max-width: 620px;">Start tonight, follow the daily orders, and measure again. If you do not feel the plan gave you a clear, usable path forward, email us inside 60 days and get a full refund.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 26px auto 0; max-width: 700px; text-align: left;">
+        <div style="background: #14120f; border: 1px solid rgba(166,184,92,0.26); border-radius: 12px; padding: 16px;"><div style="font-family: 'Anton', sans-serif; color: #A6B85C; font-size: 28px;">01</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1px; color: #F7F3EA; font-size: 17px; margin-top: 4px;">START TODAY</div><div style="font-size: 14.5px; line-height: 1.45; color: rgba(244,240,232,0.68); margin-top: 4px;">Instant digital access. No shipping. No waiting.</div></div>
+        <div style="background: #14120f; border: 1px solid rgba(166,184,92,0.26); border-radius: 12px; padding: 16px;"><div style="font-family: 'Anton', sans-serif; color: #A6B85C; font-size: 28px;">02</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1px; color: #F7F3EA; font-size: 17px; margin-top: 4px;">FOLLOW 14 DAYS</div><div style="font-size: 14.5px; line-height: 1.45; color: rgba(244,240,232,0.68); margin-top: 4px;">One page a day, 15 minutes, simple meals.</div></div>
+        <div style="background: #14120f; border: 1px solid rgba(166,184,92,0.26); border-radius: 12px; padding: 16px;"><div style="font-family: 'Anton', sans-serif; color: #A6B85C; font-size: 28px;">03</div><div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1px; color: #F7F3EA; font-size: 17px; margin-top: 4px;">EMAIL FOR REFUND</div><div style="font-size: 14.5px; line-height: 1.45; color: rgba(244,240,232,0.68); margin-top: 4px;">No hoops. No subscription to cancel.</div></div>
+      </div>
+      <style>@media (max-width: 760px) { div[style*="grid-template-columns: repeat(3, 1fr)"] { grid-template-columns: 1fr !important; } }</style>
     </div>
   </div>
 
@@ -396,8 +397,8 @@
   <div style="background: #100f10; border-top: 1px solid rgba(255,255,255,0.06); padding: 54px 22px;">
     <div style="max-width: 560px; margin: 0 auto; text-align: center;">
       <h2 style="font-family: 'Anton', sans-serif; font-weight: 400; font-size: 34px; line-height: 1.02; margin: 0; color: #F7F3EA;">THE FIRE YOU FEEL RIGHT NOW WON'T LAST. USE IT <span style="font-family: 'Permanent Marker', cursive; color: #FF7A3D; font-size: 32px; display: inline-block; transform: rotate(-3deg); text-shadow: 0 0 10px rgba(240,83,28,0.6);">tonight</span>.</h2>
-      <p style="font-size: 18px; line-height: 1.6; color: rgba(244,240,232,0.8); margin: 16px 0 24px;">Two weeks from now you'll either have a smaller waist and proof this works, or you'll be right where you are today. Twenty-seven dollars decides which.</p>
-      <a href="https://buy.stripe.com/6oU7sKctObNC1a67rN4Ni0e" style="display: block; max-width: 460px; margin: 0 auto; text-decoration: none; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 23px; padding: 21px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);">START MY 14&#8209;DAY RESET &nbsp;&middot;&nbsp; $27</a>
+      <p style="font-size: 18px; line-height: 1.6; color: rgba(244,240,232,0.8); margin: 16px 0 24px;">Two weeks from now you'll either have a smaller waist and proof this works, or you'll be right where you are today. Seven dollars decides which.</p>
+      <a href="https://buy.stripe.com/6oU7sKctObNC1a67rN4Ni0e" style="display: block; max-width: 460px; margin: 0 auto; text-decoration: none; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 23px; padding: 21px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);">START MY 14&#8209;DAY RESET &nbsp;&middot;&nbsp; $7</a>
       <p style="font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 1px; color: rgba(244,240,232,0.55); margin: 14px 0 0;">60-day money-back guarantee. Cancel nothing, because there's nothing to cancel.</p>
     </div>
   </div>
@@ -491,7 +492,7 @@ class Component extends DCLogic {
         { q: "Do I need a gym or equipment?", a: "No. The movement is 15 minutes a day and you can do all of it at home with nothing but your body and a bit of floor." },
         { q: "Do I have to quit drinking?", a: "No. The plan is built around real life, beer included. You'll learn the small adjustments that let the belly move without going cold turkey on everything you enjoy." },
         { q: "How fast will I see something?", a: "Most men see the tape move by day 7. Fourteen days is enough to prove to yourself the belly can and will shrink when you feed it the right plan." },
-        { q: "Is this a subscription?", a: "No. It's a one-time $27 payment. No trial that bills you later, no upsells at checkout, nothing to cancel." },
+        { q: "Is this a subscription?", a: "No. It's a one-time $7 payment. No trial that bills you later, no upsells at checkout, nothing to cancel." },
         { q: "What if it doesn't work for me?", a: "Then you email us inside 60 days and we refund every cent, no questions and no hoops. You keep the materials either way." }
       ]
     };

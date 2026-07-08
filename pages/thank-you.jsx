@@ -1,7 +1,7 @@
 import MetaEvent from "../components/MetaEvent";
 import { getThankYouPageHtml } from "../lib/dcPage.js";
 
-const purchaseData = { currency: "USD", value: 27.0 };
+const purchaseData = { currency: "USD", value: 7.0 };
 
 export async function getStaticProps() {
   return {
