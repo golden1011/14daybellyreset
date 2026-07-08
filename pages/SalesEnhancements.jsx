@@ -76,17 +76,27 @@ export default function SalesEnhancements() {
     const clip = document.getElementById("ba-clip");
     const line = document.getElementById("ba-line");
     const knob = document.getElementById("ba-knob");
+    const range = document.getElementById("ba-range");
     let dragging = false;
 
-    const setSlider = (clientX) => {
-      if (!slider || !clip || !line || !knob) return;
-      const rect = slider.getBoundingClientRect();
-      const fraction = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-      const pct = (fraction * 100).toFixed(2);
+    const applySliderFraction = (fraction) => {
+      if (!clip || !line || !knob) return;
+      const clamped = Math.max(0, Math.min(1, fraction));
+      const pct = (clamped * 100).toFixed(2);
 
-      clip.style.clipPath = `inset(0 ${(100 - fraction * 100).toFixed(2)}% 0 0)`;
+      clip.style.clipPath = `inset(0 ${(100 - clamped * 100).toFixed(2)}% 0 0)`;
       line.style.left = `${pct}%`;
       knob.style.left = `${pct}%`;
+    };
+
+    const setSlider = (clientX) => {
+      if (!slider) return;
+      const rect = slider.getBoundingClientRect();
+      const fraction = (clientX - rect.left) / rect.width;
+      const clamped = Math.max(0, Math.min(1, fraction));
+
+      applySliderFraction(clamped);
+      if (range) range.value = String(Math.round(clamped * 100));
     };
 
     const onPointerDown = (event) => {
@@ -101,6 +111,9 @@ export default function SalesEnhancements() {
     };
     const stopDragging = () => {
       dragging = false;
+    };
+    const onRangeInput = () => {
+      applySliderFraction(Number(range?.value || 50) / 100);
     };
 
     let redirectingToStripe = false;
@@ -126,6 +139,7 @@ export default function SalesEnhancements() {
     slider?.addEventListener("pointermove", onPointerMove);
     slider?.addEventListener("pointerup", stopDragging);
     slider?.addEventListener("pointercancel", stopDragging);
+    range?.addEventListener("input", onRangeInput);
 
     return () => {
       timers.forEach(clearTimeout);
@@ -136,6 +150,7 @@ export default function SalesEnhancements() {
       slider?.removeEventListener("pointermove", onPointerMove);
       slider?.removeEventListener("pointerup", stopDragging);
       slider?.removeEventListener("pointercancel", stopDragging);
+      range?.removeEventListener("input", onRangeInput);
     };
   }, []);
 
