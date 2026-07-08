@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import Script from "next/script";
 
-const pixelId = "1343158414610855";
+const pixelId = "1351506237081523";
 
 function createEventId(eventName) {
   const random = Math.random().toString(36).slice(2);

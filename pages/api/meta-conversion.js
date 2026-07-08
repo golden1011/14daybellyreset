@@ -1,4 +1,4 @@
-const pixelId = process.env.META_PIXEL_ID || "1343158414610855";
+const pixelId = process.env.META_PIXEL_ID || "1351506237081523";
 const graphVersion = process.env.META_GRAPH_VERSION || "v21.0";
 const allowedEvents = new Set(["PageView", "AddToCart", "Purchase"]);
 

@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const stripeBuyUrl = "https://buy.stripe.com/6oU7sKctObNC1a67rN4Ni0e";
+const stripeBuyUrl = "https://buy.stripe.com/7sY28qgK42d2062aDZ4Ni0f";
 
 function createEventId(eventName) {
   const random = Math.random().toString(36).slice(2);
