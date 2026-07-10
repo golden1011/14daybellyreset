@@ -1,3 +1,5 @@
+import crypto from "crypto";
+
 const pixelId = process.env.META_PIXEL_ID || "1351506237081523";
 const graphVersion = process.env.META_GRAPH_VERSION || "v21.0";
 const allowedEvents = new Set(["PageView", "AddToCart", "Purchase"]);
@@ -8,6 +10,24 @@ function getClientIp(req) {
     return forwarded.split(",")[0].trim();
   }
   return req.socket?.remoteAddress;
+}
+
+// Meta requires these fields to be SHA256 hashed, lowercase, trimmed, no
+// formatting characters. This is done server-side here so raw PII never
+// gets sent to Meta or stored anywhere.
+function sha256(value) {
+  if (!value) return undefined;
+  const normalized = String(value).trim().toLowerCase();
+  if (!normalized) return undefined;
+  return crypto.createHash("sha256").update(normalized).digest("hex");
+}
+
+// Phone numbers must be digits only (with country code) before hashing.
+function sha256Phone(value) {
+  if (!value) return undefined;
+  const digitsOnly = String(value).replace(/[^\d]/g, "");
+  if (!digitsOnly) return undefined;
+  return crypto.createHash("sha256").update(digitsOnly).digest("hex");
 }
 
 export default async function handler(req, res) {
@@ -21,7 +41,22 @@ export default async function handler(req, res) {
     return res.status(200).json({ ok: false, disabled: true, error: "META_ACCESS_TOKEN is not configured" });
   }
 
-  const { eventName, eventId, eventSourceUrl, fbp, fbc, customData } = req.body || {};
+  const {
+    eventName,
+    eventId,
+    eventSourceUrl,
+    fbp,
+    fbc,
+    customData,
+    email,
+    phone,
+    firstName,
+    lastName,
+    city,
+    state,
+    zip,
+    country
+  } = req.body || {};
   if (!allowedEvents.has(eventName)) {
     return res.status(400).json({ ok: false, error: "Unsupported event" });
   }
@@ -33,6 +68,25 @@ export default async function handler(req, res) {
 
   if (fbp) userData.fbp = fbp;
   if (fbc) userData.fbc = fbc;
+
+  // Match quality fields. All PII is hashed before this ever leaves the server.
+  const hashedEmail = sha256(email);
+  const hashedPhone = sha256Phone(phone);
+  const hashedFirstName = sha256(firstName);
+  const hashedLastName = sha256(lastName);
+  const hashedCity = sha256(city);
+  const hashedState = sha256(state);
+  const hashedZip = sha256(zip);
+  const hashedCountry = sha256(country);
+
+  if (hashedEmail) userData.em = [hashedEmail];
+  if (hashedPhone) userData.ph = [hashedPhone];
+  if (hashedFirstName) userData.fn = [hashedFirstName];
+  if (hashedLastName) userData.ln = [hashedLastName];
+  if (hashedCity) userData.ct = [hashedCity];
+  if (hashedState) userData.st = [hashedState];
+  if (hashedZip) userData.zp = [hashedZip];
+  if (hashedCountry) userData.country = [hashedCountry];
 
   const payload = {
     data: [

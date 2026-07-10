@@ -16,7 +16,7 @@ function getCookie(name) {
   return value ? decodeURIComponent(value.split("=").slice(1).join("=")) : undefined;
 }
 
-export default function MetaEvent({ eventName, customData }) {
+export default function MetaEvent({ eventName, customData, matchData }) {
   const eventId = useMemo(() => createEventId(eventName), [eventName]);
 
   useEffect(() => {
@@ -31,11 +31,27 @@ export default function MetaEvent({ eventName, customData }) {
         eventSourceUrl: window.location.href,
         fbp: getCookie("_fbp"),
         fbc: getCookie("_fbc"),
-        customData
+        customData,
+        ...(matchData || {})
       }),
       keepalive: true
     }).catch(() => {});
-  }, [customData, eventId, eventName]);
+  }, [customData, eventId, eventName, matchData]);
+
+  // Advanced Matching for the browser Pixel. Facebook's pixel script hashes
+  // these client-side automatically, we pass plain values here, never
+  // pre-hashed, that is what the fbevents.js library expects.
+  const advancedMatching = {
+    ...(matchData?.email ? { em: matchData.email } : {}),
+    ...(matchData?.phone ? { ph: matchData.phone } : {}),
+    ...(matchData?.firstName ? { fn: matchData.firstName } : {}),
+    ...(matchData?.lastName ? { ln: matchData.lastName } : {}),
+    ...(matchData?.city ? { ct: matchData.city } : {}),
+    ...(matchData?.state ? { st: matchData.state } : {}),
+    ...(matchData?.zip ? { zp: matchData.zip } : {}),
+    ...(matchData?.country ? { country: matchData.country } : {})
+  };
+  const hasAdvancedMatching = Object.keys(advancedMatching).length > 0;
 
   return (
     <>
@@ -49,7 +65,7 @@ export default function MetaEvent({ eventName, customData }) {
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '${pixelId}');
+          fbq('init', '${pixelId}'${hasAdvancedMatching ? `, ${JSON.stringify(advancedMatching)}` : ""});
           fbq('track', '${eventName}', ${JSON.stringify(customData || {})}, {eventID: '${eventId}'});
         `}
       </Script>
