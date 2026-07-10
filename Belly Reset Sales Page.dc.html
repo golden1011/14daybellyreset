@@ -20,36 +20,48 @@
   .heroscale > * { transform-origin: top left; }
   @keyframes guaranteeGlow { 0%, 100% { transform: scale(1); box-shadow: 0 0 24px rgba(166,184,92,0.25); } 50% { transform: scale(1.04); box-shadow: 0 0 42px rgba(166,184,92,0.48); } }
   @keyframes ctaBreath { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.08); } }
+  @media (max-width: 640px) {
+    .sales-topbar { display: none !important; }
+    .sales-hero { padding: 14px 16px 18px !important; }
+    .sales-hero-badge { font-size: 12px !important; letter-spacing: 1.7px !important; padding: 6px 10px !important; }
+    .sales-hero-title { font-size: 34px !important; line-height: 0.96 !important; margin-top: 9px !important; }
+    .sales-hero-tonight { font-size: 33px !important; }
+    .sales-hero-copy { font-size: 15px !important; line-height: 1.28 !important; margin-top: 9px !important; max-width: 350px !important; }
+    .sales-hero-mockup { margin-top: 8px !important; width: min(100%, 320px) !important; }
+    .sales-hero-mockup .heroscale { max-height: 164px !important; }
+    .sales-hero-cta { max-width: 350px !important; margin-top: 10px !important; font-size: 19px !important; padding: 16px 16px !important; letter-spacing: 1.1px !important; }
+    .sales-hero-proof { font-size: 12px !important; margin-top: 7px !important; gap: 6px !important; line-height: 1.2 !important; }
+  }
 </style>
 </helmet>
 
 <div style="background: #0c0c0e; color: #F4F0E8; font-family: 'Barlow', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden;">
 
   <!-- ===== TOP BAR ===== -->
-  <div style="border-bottom: 1px solid rgba(240,83,28,0.22); padding: 14px 20px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #0a0a0b;">
+  <div class="sales-topbar" style="border-bottom: 1px solid rgba(240,83,28,0.22); padding: 14px 20px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #0a0a0b;">
     <div style="position: relative; width: 22px; height: 22px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 1.5px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 1.5px; background: #F0531C; transform: translateX(-50%);"></div></div>
     <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 3px; font-size: 15px; color: #F4F0E8;">THE 14&#8209;DAY BELLY RESET</span>
   </div>
 
   <!-- ===== HERO (one column, centered) ===== -->
-  <div style="max-width: 640px; margin: 0 auto; padding: 40px 22px 30px; text-align: center;">
+  <div class="sales-hero" style="max-width: 640px; margin: 0 auto; padding: 40px 22px 30px; text-align: center;">
 
-    <div style="display: inline-block; background: linear-gradient(135deg, #F0531C, #C1400F); color: #FFF4EC; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2.5px; font-size: 14px; padding: 7px 15px; border-radius: 4px;">FOR MEN 35+ WITH STUBBORN BELLY FAT</div>
+    <div class="sales-hero-badge" style="display: inline-block; background: linear-gradient(135deg, #F0531C, #C1400F); color: #FFF4EC; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2.5px; font-size: 14px; padding: 7px 15px; border-radius: 4px;">FOR MEN 35+ WITH STUBBORN BELLY FAT</div>
 
-    <h1 style="font-family: 'Anton', sans-serif; font-weight: 400; font-size: 46px; line-height: 0.98; letter-spacing: 0.5px; margin: 20px 0 0; color: #F7F3EA;">LOSE YOUR FIRST INCH OF BELLY IN 14 DAYS.<br><span style="color: #F0531C;">STARTING</span> <span style="font-family: 'Permanent Marker', cursive; color: #FF7A3D; font-size: 44px; display: inline-block; transform: rotate(-3deg); text-shadow: 0 0 10px rgba(240,83,28,0.6), 0 0 26px rgba(240,83,28,0.4);">tonight</span><span style="color: #F0531C;">.</span></h1>
+    <h1 class="sales-hero-title" style="font-family: 'Anton', sans-serif; font-weight: 400; font-size: 46px; line-height: 0.98; letter-spacing: 0.5px; margin: 20px 0 0; color: #F7F3EA;">LOSE YOUR FIRST INCH OF BELLY IN 14 DAYS.<br><span style="white-space: nowrap;"><span style="color: #F0531C;">STARTING</span> <span class="sales-hero-tonight" style="font-family: 'Permanent Marker', cursive; color: #FF7A3D; font-size: 44px; display: inline-block; transform: rotate(-3deg); text-shadow: 0 0 10px rgba(240,83,28,0.6), 0 0 26px rgba(240,83,28,0.4);">tonight</span><span style="color: #F0531C;">.</span></span></h1>
 
-    <p style="font-family: 'Barlow', sans-serif; font-size: 19px; line-height: 1.5; color: rgba(244,240,232,0.82); margin: 20px auto 0; max-width: 520px; font-weight: 500;">A dead-simple 14-day plan built for the way a man over 35 actually lives. No gym. No keto. No giving up beer. You measure your waist, follow the daily orders, and watch the number drop.</p>
+    <p class="sales-hero-copy" style="font-family: 'Barlow', sans-serif; font-size: 19px; line-height: 1.5; color: rgba(244,240,232,0.82); margin: 20px auto 0; max-width: 520px; font-weight: 500;">A dead-simple 14-day plan built for the way a man over 35 actually lives. No gym. No keto. No giving up beer. You measure your waist, follow the daily orders, and watch the number drop.</p>
 
     <!-- PRODUCT MOCKUP (transparent, native render) -->
-    <div style="margin: 22px auto 0; width: 100%;">
+    <div class="sales-hero-mockup" style="margin: 22px auto 0; width: 100%;">
       <div class="heroscale" style="width: 100%; overflow: hidden; position: relative;">
         <dc-import name="Belly Reset Mockup Wide" hint-size="1750px,1120px" style="width: 1750px; height: 1120px; display: block;"></dc-import>
       </div>
     </div>
 
     <!-- CTA -->
-    <a href="https://buy.stripe.com/7sY28qgK42d2062aDZ4Ni0f" style="display: block; max-width: 460px; margin: 26px auto 0; text-decoration: none; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 22px; padding: 20px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);">START MY 14&#8209;DAY RESET &nbsp;&middot;&nbsp; $7</a>
-    <p style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 1px; color: rgba(244,240,232,0.55); margin: 14px 0 0;">One-time payment. No subscription. 60-day money-back guarantee.</p>
+    <a class="sales-hero-cta" href="https://buy.stripe.com/7sY28qgK42d2062aDZ4Ni0f" style="display: block; max-width: 460px; margin: 26px auto 0; text-decoration: none; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 22px; padding: 20px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);">START MY 14&#8209;DAY RESET &nbsp;&middot;&nbsp; $7</a>
+    <p class="sales-hero-proof" style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 1px; color: rgba(244,240,232,0.55); margin: 14px 0 0;">One-time payment. No subscription. 60-day money-back guarantee.</p>
   </div>
 
   <!-- ===== PAIN AGITATION ===== -->
