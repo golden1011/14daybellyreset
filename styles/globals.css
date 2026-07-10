@@ -40,3 +40,72 @@ a:hover {
     opacity: 1;
   }
 }
+@media (max-width: 640px) {
+  .sales-topbar {
+    display: none !important;
+  }
+
+  .sales-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 8px 16px 18px !important;
+  }
+
+  .sales-hero-badge {
+    order: 1;
+    font-size: 12px !important;
+    letter-spacing: 1.7px !important;
+    padding: 6px 10px !important;
+  }
+
+  .sales-hero-title {
+    order: 2;
+    font-size: 32px !important;
+    line-height: 0.96 !important;
+    margin-top: 8px !important;
+  }
+
+  .sales-hero-title span[style*="white-space"] {
+    white-space: nowrap !important;
+  }
+
+  .sales-hero-tonight {
+    font-size: 31px !important;
+  }
+
+  .sales-hero-copy {
+    order: 3;
+    font-size: 14.5px !important;
+    line-height: 1.26 !important;
+    margin-top: 8px !important;
+    max-width: 350px !important;
+  }
+
+  .sales-hero-cta {
+    order: 4;
+    width: 100% !important;
+    max-width: 350px !important;
+    margin-top: 10px !important;
+    font-size: 19px !important;
+    padding: 16px !important;
+    letter-spacing: 1.1px !important;
+  }
+
+  .sales-hero-proof {
+    order: 5;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    margin-top: 7px !important;
+  }
+
+  .sales-hero-mockup {
+    order: 6;
+    margin-top: 10px !important;
+    width: min(100%, 310px) !important;
+  }
+
+  .sales-hero-mockup .heroscale {
+    max-height: 150px !important;
+  }
+}
