@@ -16,26 +16,80 @@ function getCookie(name) {
   return value ? decodeURIComponent(value.split("=").slice(1).join("=")) : undefined;
 }
 
+// The Meta pixel script sets the _fbp cookie itself, asynchronously, once
+// fbevents.js finishes loading and fbq('init', ...) runs. If we read the
+// cookie immediately on mount we can lose the race and send nothing, which
+// is why fbp coverage was showing low in Events Manager. This polls briefly
+// for the cookie to show up before giving up.
+function waitForCookie(name, { timeoutMs = 1500, intervalMs = 100 } = {}) {
+  return new Promise((resolve) => {
+    const existing = getCookie(name);
+    if (existing) {
+      resolve(existing);
+      return;
+    }
+    const start = Date.now();
+    const timer = setInterval(() => {
+      const value = getCookie(name);
+      if (value || Date.now() - start > timeoutMs) {
+        clearInterval(timer);
+        resolve(value);
+      }
+    }, intervalMs);
+  });
+}
+
+// If the _fbc cookie has not been set yet, but the URL has a Meta click ID
+// (fbclid), build the fbc value manually in the format Meta expects:
+// fb.<subdomainIndex>.<creationTime>.<fbclid>
+function fbcFromUrl() {
+  if (typeof window === "undefined") return undefined;
+  const params = new URLSearchParams(window.location.search);
+  const fbclid = params.get("fbclid");
+  if (!fbclid) return undefined;
+  return `fb.1.${Date.now()}.${fbclid}`;
+}
+
 export default function MetaEvent({ eventName, customData, matchData }) {
   const eventId = useMemo(() => createEventId(eventName), [eventName]);
 
   useEffect(() => {
-    fetch("/api/meta-conversion", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        eventName,
-        eventId,
-        eventSourceUrl: window.location.href,
-        fbp: getCookie("_fbp"),
-        fbc: getCookie("_fbc"),
-        customData,
-        ...(matchData || {})
-      }),
-      keepalive: true
-    }).catch(() => {});
+    let cancelled = false;
+
+    async function send() {
+      // Give the Meta pixel script a brief window to set its cookies before
+      // we read them, this fixes the low fbp/fbc capture rate.
+      const [fbp, fbcFromCookie] = await Promise.all([
+        waitForCookie("_fbp"),
+        waitForCookie("_fbc")
+      ]);
+      const fbc = fbcFromCookie || fbcFromUrl();
+
+      if (cancelled) return;
+
+      fetch("/api/meta-conversion", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          eventName,
+          eventId,
+          eventSourceUrl: window.location.href,
+          fbp,
+          fbc,
+          customData,
+          ...(matchData || {})
+        }),
+        keepalive: true
+      }).catch(() => {});
+    }
+
+    send();
+
+    return () => {
+      cancelled = true;
+    };
   }, [customData, eventId, eventName, matchData]);
 
   // Advanced Matching for the browser Pixel. Facebook's pixel script hashes
