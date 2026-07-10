@@ -3,12 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 14 Day Belly Reset</title>
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The 14 Day Belly Reset</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -20,17 +22,25 @@
   .heroscale > * { transform-origin: top left; }
   @keyframes guaranteeGlow { 0%, 100% { transform: scale(1); box-shadow: 0 0 24px rgba(166,184,92,0.25); } 50% { transform: scale(1.04); box-shadow: 0 0 42px rgba(166,184,92,0.48); } }
   @keyframes ctaBreath { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.08); } }
+  @keyframes ctaLavaGlow { 0%, 100% { box-shadow: 0 12px 30px rgba(240,83,28,0.4), 0 0 10px rgba(255,122,61,0.16); filter: brightness(1); } 28% { box-shadow: 0 12px 34px rgba(240,83,28,0.54), -10px -4px 22px rgba(255,122,61,0.28), 12px 5px 24px rgba(255,218,137,0.16); filter: brightness(1.02); } 57% { box-shadow: 0 12px 32px rgba(240,83,28,0.48), 11px -7px 24px rgba(255,122,61,0.24), -8px 8px 20px rgba(255,218,137,0.14); filter: brightness(1.01); } 81% { box-shadow: 0 12px 36px rgba(240,83,28,0.56), -5px 8px 24px rgba(255,122,61,0.26), 9px -5px 20px rgba(255,218,137,0.13); filter: brightness(1.025); } }
+  @keyframes ctaOutlineGlow { 0%, 100% { opacity: 0.55; transform: scale(1); } 36% { opacity: 0.8; transform: scale(1.012); } 68% { opacity: 0.64; transform: scale(1.006); } }
+  .sales-hero-cta { position: relative !important; isolation: isolate; overflow: visible !important; animation: ctaLavaGlow 5.8s ease-in-out infinite; }
+  .sales-hero-cta::before { content: ""; position: absolute; inset: -4px; border: 2px solid rgba(255,213,116,0.42); border-radius: 12px; box-shadow: 0 0 14px rgba(255,122,61,0.36), 0 0 26px rgba(240,83,28,0.18), inset 0 0 8px rgba(255,122,61,0.12); pointer-events: none; animation: ctaOutlineGlow 6.6s ease-in-out infinite; }
+  .sales-hero-cta::after { content: ""; position: absolute; inset: -12px -16px; border-radius: 18px; background: radial-gradient(60% 80% at 25% 20%, rgba(255,122,61,0.18), transparent 62%), radial-gradient(55% 70% at 78% 70%, rgba(255,218,137,0.12), transparent 64%); filter: blur(4px); opacity: 0.72; pointer-events: none; z-index: -1; animation: ctaOutlineGlow 7.4s ease-in-out infinite reverse; }
+  .cta-burn { display: none; }
+  @media (min-width: 641px) { .sales-hero-proof { margin-top: 18px !important; } }
+  @media (min-width: 870px) { .sales-hero-mockup { width: min(82%, 520px) !important; } }
   @media (max-width: 640px) {
     .sales-topbar { display: flex !important; padding: 8px 16px !important; gap: 9px !important; }
-    .sales-hero { padding: 8px 16px 18px !important; }
-    .sales-hero-badge { font-size: 12px !important; letter-spacing: 1.7px !important; padding: 6px 10px !important; }
-    .sales-hero-title { font-size: 34px !important; line-height: 1.02 !important; margin-top: 9px !important; }
+    .sales-hero { display: flex !important; flex-direction: column !important; align-items: center !important; padding: 4px 16px 18px !important; }
+    .sales-hero-badge { order: 1; font-size: 12px !important; letter-spacing: 1.7px !important; padding: 6px 10px !important; }
+    .sales-hero-title { order: 2; font-size: 34px !important; line-height: 1.02 !important; margin-top: 9px !important; }
     .sales-hero-tonight { font-size: 33px !important; }
-    .sales-hero-copy { font-size: 15px !important; line-height: 1.28 !important; margin-top: 9px !important; max-width: 350px !important; }
-    .sales-hero-mockup { margin-top: 8px !important; width: min(100%, 320px) !important; }
+    .sales-hero-copy { order: 3; font-size: 15px !important; line-height: 1.28 !important; margin-top: 9px !important; max-width: 350px !important; }
+    .sales-hero-mockup { order: 4; margin-top: 8px !important; width: min(100%, 320px) !important; }
     .sales-hero-mockup .heroscale { max-height: 164px !important; }
-    .sales-hero-cta { max-width: 350px !important; margin-top: 10px !important; font-size: 19px !important; padding: 16px 16px !important; letter-spacing: 1.1px !important; }
-    .sales-hero-proof { font-size: 12px !important; margin-top: 7px !important; gap: 6px !important; line-height: 1.2 !important; }
+    .sales-hero-cta { order: 5; max-width: 350px !important; margin-top: 10px !important; font-size: 19px !important; padding: 16px 16px !important; letter-spacing: 1.1px !important; }
+    .sales-hero-proof { order: 6; font-size: 12px !important; margin-top: 7px !important; gap: 6px !important; line-height: 1.2 !important; }
   }
 </style>
 </helmet>
@@ -39,12 +49,12 @@
 
   <!-- ===== TOP BAR ===== -->
   <div class="sales-topbar" style="border-bottom: 1px solid rgba(240,83,28,0.22); padding: 14px 20px; display: flex; align-items: center; justify-content: center; gap: 12px; background: #0a0a0b;">
-    <div style="position: relative; width: 22px; height: 22px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 1.5px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 1.5px; background: #F0531C; transform: translateX(-50%);"></div></div>
+    <div style="position: relative; width: 22px; height: 22px; flex: none;"><div style="position: absolute; inset: 0; border: 2px solid #F0531C; border-radius: 999px;"></div><div style="position: absolute; left: 2px; right: 2px; top: 50%; height: 1.5px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 2px; bottom: 2px; left: 50%; width: 1.5px; background: #F0531C; transform: translateX(-50%);"></div></div>
     <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 3px; font-size: 15px; color: #F4F0E8;">THE 14&#8209;DAY BELLY RESET</span>
   </div>
 
   <!-- ===== HERO (one column, centered) ===== -->
-  <div class="sales-hero" style="max-width: 640px; margin: 0 auto; padding: 40px 22px 30px; text-align: center;">
+  <div class="sales-hero" style="max-width: 640px; margin: 0 auto; padding: 20px 22px 30px; text-align: center;">
 
     <div class="sales-hero-badge" style="display: inline-block; background: linear-gradient(135deg, #F0531C, #C1400F); color: #FFF4EC; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2.5px; font-size: 14px; padding: 7px 15px; border-radius: 4px;">FOR MEN 35+ WITH STUBBORN BELLY FAT</div>
 
@@ -60,7 +70,7 @@
     </div>
 
     <!-- CTA -->
-    <a class="sales-hero-cta" href="https://buy.stripe.com/7sY28qgK42d2062aDZ4Ni0f" style="display: block; max-width: 460px; margin: 26px auto 0; text-decoration: none; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 22px; padding: 20px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);">START MY 14&#8209;DAY RESET &nbsp;&middot;&nbsp; $7</a>
+    <a class="sales-hero-cta" href="https://buy.stripe.com/7sY28qgK42d2062aDZ4Ni0f" style="display: block; max-width: 460px; margin: 26px auto 0; text-decoration: none; background: linear-gradient(180deg, #FF7A3D, #F0531C); color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 1.5px; font-size: 22px; padding: 20px 22px; border-radius: 8px; box-shadow: 0 12px 30px rgba(240,83,28,0.4);" style-hover="filter: brightness(1.06);"><span style="position: relative; z-index: 3;">START MY 14&#8209;DAY RESET &nbsp;&middot;&nbsp; $7</span></a>
     <p class="sales-hero-proof" style="font-family: 'Barlow Condensed', sans-serif; font-size: 15px; letter-spacing: 1px; color: rgba(244,240,232,0.55); margin: 14px 0 0;">One-time payment. No subscription. 60-day money-back guarantee.</p>
   </div>
 
@@ -180,7 +190,7 @@
 
       <sc-for list="{{ items }}" as="item" hint-placeholder-count="5">
         <div style="display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.08);">
-          <div style="position: relative; width: 34px; height: 34px; flex: none; margin-top: 2px;"><div style="position: absolute; inset: 0; border: 2.5px solid #F0531C; border-radius: 50%;"></div><div style="position: absolute; left: 3px; right: 3px; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 3px; bottom: 3px; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><div style="position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; background: #F0531C; border-radius: 50%; transform: translate(-50%,-50%);"></div></div>
+          <div style="position: relative; width: 34px; height: 34px; flex: none; margin-top: 2px;"><div style="position: absolute; inset: 0; border: 2.5px solid #F0531C; border-radius: 999px;"></div><div style="position: absolute; left: 3px; right: 3px; top: 50%; height: 2px; background: #F0531C; transform: translateY(-50%);"></div><div style="position: absolute; top: 3px; bottom: 3px; left: 50%; width: 2px; background: #F0531C; transform: translateX(-50%);"></div><div style="position: absolute; left: 50%; top: 50%; width: 10px; height: 10px; background: #F0531C; border-radius: 999px; transform: translate(-50%,-50%);"></div></div>
           <div>
             <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.5px; font-size: 21px; color: #F7F3EA;">{{ item.title }}</div>
             <div style="font-size: 16.5px; line-height: 1.5; color: rgba(244,240,232,0.72); margin-top: 4px;">{{ item.body }}</div>
@@ -317,7 +327,7 @@
         <img src="assets/ba-front.jpg" alt="Transformation" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none;">
         <img id="ba-clip" src="assets/ba-side-profile.jpg" alt="Transformation" draggable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; clip-path: inset(0 50% 0 0);">
         <div id="ba-line" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #F0531C; transform: translateX(-50%); box-shadow: 0 0 12px rgba(240,83,28,0.8); pointer-events: none;"></div>
-        <div id="ba-knob" style="position: absolute; top: 50%; left: 50%; width: 48px; height: 48px; border-radius: 50%; background: #F0531C; transform: translate(-50%,-50%); display: flex; align-items: center; justify-content: center; color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 16px rgba(0,0,0,0.55); pointer-events: none;">&#9664;&#9654;</div>
+        <div id="ba-knob" style="position: absolute; top: 50%; left: 50%; width: 48px; height: 48px; border-radius: 999px; background: #F0531C; transform: translate(-50%,-50%); display: flex; align-items: center; justify-content: center; color: #12100c; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -1px; box-shadow: 0 4px 16px rgba(0,0,0,0.55); pointer-events: none;">&#9664;&#9654;</div>
         <input id="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after" oninput="var p=this.value;var c=document.getElementById('ba-clip');var l=document.getElementById('ba-line');var k=document.getElementById('ba-knob');if(c&&l&&k){c.style.clipPath='inset(0 '+(100-p)+'% 0 0)';l.style.left=p+'%';k.style.left=p+'%';}" onchange="this.oninput()" style="position: absolute; inset: 0; z-index: 8; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; padding: 0; appearance: none; -webkit-appearance: none; background: transparent;">
         <div style="position: absolute; top: 12px; left: 14px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 2px; font-size: 12px; color: #FFF4EC; background: rgba(10,9,8,0.55); padding: 5px 10px; border-radius: 4px; pointer-events: none;">DRAG TO COMPARE</div>
       </div>
@@ -385,8 +395,8 @@
   <!-- ===== GUARANTEE ===== -->
   <div style="background: radial-gradient(120% 90% at 50% 0%, rgba(166,184,92,0.14) 0%, #100f10 52%, #0c0c0e 100%); border-top: 1px solid rgba(166,184,92,0.22); border-bottom: 1px solid rgba(166,184,92,0.18); padding: 54px 22px;">
     <div style="max-width: 760px; margin: 0 auto; text-align: center;">
-      <div style="display: inline-flex; align-items: center; justify-content: center; width: 132px; height: 132px; border-radius: 50%; background: rgba(166,184,92,0.12); border: 3px solid #A6B85C; animation: guaranteeGlow 2.8s ease-in-out infinite; position: relative;">
-        <div style="position: absolute; inset: 13px; border: 1px solid rgba(166,184,92,0.42); border-radius: 50%;"></div>
+      <div style="display: inline-flex; align-items: center; justify-content: center; width: 132px; height: 132px; border-radius: 999px; background: rgba(166,184,92,0.12); border: 3px solid #A6B85C; animation: guaranteeGlow 2.8s ease-in-out infinite; position: relative;">
+        <div style="position: absolute; inset: 13px; border: 1px solid rgba(166,184,92,0.42); border-radius: 999px;"></div>
         <div style="font-family: 'Anton', sans-serif; font-size: 34px; color: #F7F3EA; line-height: 0.9;">100%</div>
         <div style="position: absolute; bottom: 26px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; color: #A6B85C;">REFUND</div>
       </div>
