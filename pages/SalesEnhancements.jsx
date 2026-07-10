@@ -16,6 +16,13 @@ function getCookie(name) {
   return value ? decodeURIComponent(value.split("=").slice(1).join("=")) : undefined;
 }
 
+function fbcFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const fbclid = params.get("fbclid");
+  if (!fbclid) return undefined;
+  return `fb.1.${Date.now()}.${fbclid}`;
+}
+
 function trackAddToCart() {
   const eventName = "AddToCart";
   const eventId = createEventId(eventName);
@@ -32,7 +39,7 @@ function trackAddToCart() {
       eventId,
       eventSourceUrl: window.location.href,
       fbp: getCookie("_fbp"),
-      fbc: getCookie("_fbc"),
+      fbc: getCookie("_fbc") || fbcFromUrl(),
       customData: {}
     }),
     keepalive: true

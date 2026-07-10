@@ -31,7 +31,8 @@ export async function getServerSideProps({ query }) {
         city: address?.city || undefined,
         state: address?.state || undefined,
         zip: address?.postal_code || undefined,
-        country: address?.country || undefined
+        country: address?.country || undefined,
+        externalId: typeof session.customer === "string" ? session.customer : details?.email || undefined
       };
       // Strip out any undefined keys so we do not send empty fields.
       matchData = Object.fromEntries(Object.entries(matchData).filter(([, v]) => v));

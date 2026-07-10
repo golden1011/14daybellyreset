@@ -55,7 +55,8 @@ export default async function handler(req, res) {
     city,
     state,
     zip,
-    country
+    country,
+    externalId
   } = req.body || {};
   if (!allowedEvents.has(eventName)) {
     return res.status(400).json({ ok: false, error: "Unsupported event" });
@@ -78,7 +79,7 @@ export default async function handler(req, res) {
   const hashedState = sha256(state);
   const hashedZip = sha256(zip);
   const hashedCountry = sha256(country);
-
+  const hashedExternalId = sha256(externalId || email);
   if (hashedEmail) userData.em = [hashedEmail];
   if (hashedPhone) userData.ph = [hashedPhone];
   if (hashedFirstName) userData.fn = [hashedFirstName];
@@ -87,6 +88,7 @@ export default async function handler(req, res) {
   if (hashedState) userData.st = [hashedState];
   if (hashedZip) userData.zp = [hashedZip];
   if (hashedCountry) userData.country = [hashedCountry];
+  if (hashedExternalId) userData.external_id = [hashedExternalId];
 
   const payload = {
     data: [
