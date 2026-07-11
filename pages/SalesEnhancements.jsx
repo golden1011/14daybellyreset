@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { readMetaMatchData } from "../components/metaMatchData";
 
 const stripeBuyUrl = "https://buy.stripe.com/7sY28qgK42d2062aDZ4Ni0f";
 
@@ -40,7 +41,8 @@ function trackAddToCart() {
       eventSourceUrl: window.location.href,
       fbp: getCookie("_fbp"),
       fbc: getCookie("_fbc") || fbcFromUrl(),
-      customData: {}
+      customData: {},
+      ...readMetaMatchData()
     }),
     keepalive: true
   }).catch(() => {});

@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from "react";
 import Script from "next/script";
+import { readMetaMatchData } from "./metaMatchData";
 
 const pixelId = "1351506237081523";
 
@@ -52,6 +53,8 @@ function fbcFromUrl() {
 
 export default function MetaEvent({ eventName, customData, matchData }) {
   const eventId = useMemo(() => createEventId(eventName), [eventName]);
+  const browserMatchData = useMemo(() => readMetaMatchData(), []);
+  const combinedMatchData = useMemo(() => ({ ...browserMatchData, ...(matchData || {}) }), [browserMatchData, matchData]);
 
   useEffect(() => {
     let cancelled = false;
@@ -79,7 +82,7 @@ export default function MetaEvent({ eventName, customData, matchData }) {
           fbp,
           fbc,
           customData,
-          ...(matchData || {})
+          ...combinedMatchData
         }),
         keepalive: true
       }).catch(() => {});
@@ -90,20 +93,21 @@ export default function MetaEvent({ eventName, customData, matchData }) {
     return () => {
       cancelled = true;
     };
-  }, [customData, eventId, eventName, matchData]);
+  }, [combinedMatchData, customData, eventId, eventName]);
 
   // Advanced Matching for the browser Pixel. Facebook's pixel script hashes
   // these client-side automatically, we pass plain values here, never
   // pre-hashed, that is what the fbevents.js library expects.
   const advancedMatching = {
-    ...(matchData?.email ? { em: matchData.email } : {}),
-    ...(matchData?.phone ? { ph: matchData.phone } : {}),
-    ...(matchData?.firstName ? { fn: matchData.firstName } : {}),
-    ...(matchData?.lastName ? { ln: matchData.lastName } : {}),
-    ...(matchData?.city ? { ct: matchData.city } : {}),
-    ...(matchData?.state ? { st: matchData.state } : {}),
-    ...(matchData?.zip ? { zp: matchData.zip } : {}),
-    ...(matchData?.country ? { country: matchData.country } : {})
+    ...(combinedMatchData?.email ? { em: combinedMatchData.email } : {}),
+    ...(combinedMatchData?.phone ? { ph: combinedMatchData.phone } : {}),
+    ...(combinedMatchData?.firstName ? { fn: combinedMatchData.firstName } : {}),
+    ...(combinedMatchData?.lastName ? { ln: combinedMatchData.lastName } : {}),
+    ...(combinedMatchData?.city ? { ct: combinedMatchData.city } : {}),
+    ...(combinedMatchData?.state ? { st: combinedMatchData.state } : {}),
+    ...(combinedMatchData?.zip ? { zp: combinedMatchData.zip } : {}),
+    ...(combinedMatchData?.country ? { country: combinedMatchData.country } : {}),
+    ...(combinedMatchData?.externalId ? { external_id: combinedMatchData.externalId } : {})
   };
   const hasAdvancedMatching = Object.keys(advancedMatching).length > 0;
 

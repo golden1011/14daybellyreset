@@ -56,7 +56,8 @@ export default async function handler(req, res) {
     state,
     zip,
     country,
-    externalId
+    externalId,
+    fbLoginId
   } = req.body || {};
   if (!allowedEvents.has(eventName)) {
     return res.status(400).json({ ok: false, error: "Unsupported event" });
@@ -79,7 +80,8 @@ export default async function handler(req, res) {
   const hashedState = sha256(state);
   const hashedZip = sha256(zip);
   const hashedCountry = sha256(country);
-  const hashedExternalId = sha256(externalId || email);
+  const cleanExternalId = typeof externalId === "string" ? externalId.trim() : undefined;
+  const cleanFbLoginId = typeof fbLoginId === "string" ? fbLoginId.trim() : undefined;
   if (hashedEmail) userData.em = [hashedEmail];
   if (hashedPhone) userData.ph = [hashedPhone];
   if (hashedFirstName) userData.fn = [hashedFirstName];
@@ -88,7 +90,8 @@ export default async function handler(req, res) {
   if (hashedState) userData.st = [hashedState];
   if (hashedZip) userData.zp = [hashedZip];
   if (hashedCountry) userData.country = [hashedCountry];
-  if (hashedExternalId) userData.external_id = [hashedExternalId];
+  if (cleanExternalId) userData.external_id = [cleanExternalId];
+  if (cleanFbLoginId) userData.fb_login_id = cleanFbLoginId;
 
   const payload = {
     data: [
